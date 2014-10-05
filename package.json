@@ -1,0 +1,17 @@
+{
+  "name": "wp-vcp-niedersachsen",
+  "version": "0.1.0",
+  "description": "The template for www.vcp-niedersachsen.de",
+  "keywords": [
+    "VCP"
+  ],
+  "author": "Emanuel Kluge",
+  "license": "GNU/GPL",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^0.14.2"
+  }
+}

@@ -1,0 +1,32 @@
+
+.branding .mainnav ul ul {
+  float: left;
+  position: absolute;
+  top: 2em;
+  left: -999em;
+  z-index: 99999;
+}
+
+.branding .mainnav li:hover > a {
+  background: #F0F0F0;
+}
+
+.branding .mainnav ul li:hover > ul {
+  left: 0;
+}
+
+.branding .mainnav ul li ul.sub-menu li a {
+  width: 11em;
+  height: auto;
+  display: block;
+  line-height: 1.2;
+  background-color: #F9F9F9;
+  padding: 0.75em 1.166667em;
+  text-transform: none;
+}
+
+.branding .mainnav ul li ul.sub-menu li a:hover,
+.branding .mainnav ul li ul.sub-menu li a:focus {
+  background-color: #F0F0F0;
+  text-decoration: none;
+}

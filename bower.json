@@ -1,0 +1,28 @@
+{
+  "name": "wp-vcp-niedersachsen",
+  "version": "0.1.0",
+  "authors": [
+    "Emanuel Kluge"
+  ],
+  "description": "The template for www.vcp-niedersachsen.de",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "VCP"
+  ],
+  "license": "GNU/GPL",
+  "homepage": "http://www.vcp-niedersachsen.de/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "html5shiv": "~3.7.2"
+  }
+}
