@@ -1,0 +1,22 @@
+
+/* Footer
+--------------------------------------------- */
+.colophon p {
+  line-height: 1.5;
+}
+a.top {
+  margin: rem(3) 0 0 0;
+  font-weight: bold;
+  display: block;
+}
+a.top:hover,
+a.top:focus {
+  text-decoration: none;
+}
+
+@media screen and (max-width: #{$breakpoint-3}px) {
+  .colophon {
+    width: 100%;
+    float: none;
+  }
+}

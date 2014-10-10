@@ -1,0 +1,83 @@
+
+/* Pages
+--------------------------------------------- */
+.content .page {
+  margin: 0 0 rem(40);
+  padding: 0 0 rem(40);
+  overflow: hidden;
+  clear: both;
+  font-size: .95em;
+  line-height: 1.6;
+  border-bottom: 1px solid #ddd;
+}
+.content .page:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.content .page-entry-header {
+  margin: 0;
+}
+.content .page-entry-header h1.entry-title {
+  margin: 0;
+  font: bold rem(20)/#{(28/20)} 'Droid Sans', sans-serif;
+  color: $ci-blue;
+}
+.content .page p {
+  padding: 0 0 rem(20) 0;
+}
+.content .page a.post-edit-link {
+  display: block;
+  margin: rem(20) 0 0 0;
+}
+/* --- Fullwidth Page --- */
+.full-width .content .page {
+  margin: 0;
+}
+/* --- Archive, 404, Search Results --- */
+.content .page-header h1.page-title {
+  padding: 0 0 rem(20) 0;
+  font-size: rem(13);
+  color: #777;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: rem(1);
+}
+/* --- Contact Page --- */
+.content .wpcf7 {
+  overflow: hidden;
+  margin: 0 0 rem(20) 0;
+  padding: rem(20);
+  background: #F0F0F0;
+}
+.content .wpcf7 p span.required {
+  color: #E75428;
+}
+.content .wpcf7-text,
+.content .wpcf7-textarea {
+  padding: rem(9) rem(5);
+  background-color: white;
+  border: 1px solid #ddd;
+  font: rem(15) 'Droid Sans', sans-serif;
+  color: #777;
+}
+.content .wpcf7-text {
+  width: 60%;
+  margin: rem(5) 0 rem(15);
+}
+.content .wpcf7-textarea {
+  width: 100%;
+  margin: 5px 0 0;
+  resize: vertical;
+  @include box-sizing (border-box);
+}
+.content .wpcf7-form p {
+  padding: 0;
+}
+
+@media screen and (max-width: #{$breakpoint-3}px) {
+  /* --- Pages ---- */
+  .content .page .wpcf7 input.textfield {
+    width: 95%;
+  }
+}

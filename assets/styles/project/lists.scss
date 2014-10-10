@@ -1,0 +1,44 @@
+
+/* Lists
+--------------------------------------------- */
+.content .post ul,
+.content .page ul  {
+  padding: rem(7) 0 rem(7) rem(30);
+  line-height: 1.3;
+}
+.content .post ul li,
+.content .page ul li {
+  padding: 0 0 rem(12);
+  list-style: square;
+}
+.content .post ol,
+.content .page ol  {
+  padding: rem(7) 0 rem(7) rem(30);
+  line-height: 1.3;
+}
+.content .post ol li,
+.content .page ol li {
+  padding: 0 0 rem(12);
+  list-style: decimal;
+}
+.content .post ol ol li,
+.content .page ol ol li {
+  list-style: upper-alpha;
+}
+.content .post ol ol ol li,
+.content .page ol ol ol li {
+  list-style: lower-roman;
+}
+.content dl {
+  margin: 0;
+  padding: 0;
+}
+.content dt {
+  font-weight: bold;
+  margin: 0;
+  padding: rem(10) rem(5) rem(5);
+}
+.content dd {
+  margin: 0;
+  padding: 0 0 rem(10) rem(15);
+}

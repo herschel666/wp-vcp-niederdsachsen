@@ -1,0 +1,82 @@
+
+/* Post Formats
+--------------------------------------------- */
+.content .entry-link,
+.content .entry-gallery {
+  width: 100%;
+  margin: 0;
+  float: left;
+}
+/* --- Link Post Format --- */
+.content .entry-link a {
+  font-size: 1.1em;
+  color: #009BC2;
+  font-weight: bold;
+}
+.content .entry-link .entry-meta a {
+  font-size: 1em;
+  font-weight: normal;
+}
+/* --- Image Post Format --- */
+.content .entry-header h2.entry-title-image {
+  margin-top: 0;
+  font-size: 1.1em;
+}
+/* --- Video and Gallery Post Format --- */
+.content .entry-gallery .entry-header h2.entry-title,
+.content .entry-video .entry-header h2.entry-title{
+  margin: 0 0 5px;
+}
+.content .entry-gallery .entry-header p,
+.content .entry-video .entry-header p {
+  font: italic rem(12)/#{(18/12)} 'Droid Serif', serif;
+}
+.content .entry-gallery .entry-header p a,
+.content .entry-video .entry-header p a {
+  font-family: 'Droid Sans', sans-serif;
+  font-style: normal;
+}
+.content .entry-gallery .entry-content-gallery {
+  width: 54%;
+  float: left;
+}
+.content .entry-gallery .gallery-thumb {
+  width: 42.258%;
+  float: left;
+  margin: rem(5) rem(15) rem(15) 0;
+  display: block;
+}
+.content .post img.attachment-medium {
+  max-width: 100%;
+  height: auto;
+  padding: 0;
+}
+.content .gallery-meta {
+  background-color: #ffff99;
+  margin: 0 0 rem(30) 0;
+  padding: rem(10) rem(20);
+  float: left;
+}
+.content .gallery-meta p {
+  padding: 0;
+  font-size: rem(12);
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+@media screen and (max-width: #{$breakpoint-3}px) {
+  /* --- Post Formats ---- */
+  .content .entry-gallery .entry-content-gallery {
+    width: 100%;
+    float: none;
+  }
+  .content .entry-gallery .gallery-thumb {
+    width: 100%;
+    float: none;
+    margin: rem(5) rem(15) rem(15) 0;
+  }
+  .content .entry-link a {
+    font-size: .9em;
+  }
+}

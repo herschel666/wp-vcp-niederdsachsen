@@ -26,10 +26,10 @@ get_header(); ?>
             </h2>
           </header><!-- end entry-header -->
           <div class="single-entry-content">
-            <p>
-              <a href="<?php the_permalink(14); ?>">&larr; zurück</a>
-            </p>
             <?php echo do_shortcode($formObj['shortcode']); ?>
+            <p>
+              <a href="javascript:history.back();">&larr; zurück</a>
+            </p>
           </div>
         </article>
       <?php else : ?>
@@ -37,7 +37,7 @@ get_header(); ?>
         <?php get_template_part( 'content', 'page' ); ?>
       <?php endif; ?>
 
-      <?php comments_template( '', true ); ?>
+      <?php comments_template('', true); ?>
 
     </div><!-- end content -->
 

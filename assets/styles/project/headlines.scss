@@ -1,0 +1,23 @@
+
+/* Headlines
+--------------------------------------------- */
+.content h2 {
+  margin: rem(26) 0 rem(12);
+  font: bold rem(20)/#{(28/20)} 'Droid Sans', sans-serif;
+}
+.content h3 {
+  margin: rem(26) 0 rem(12);
+  font: bold rem(18)/#{(25/18)} 'Droid Sans', sans-serif;
+}
+.content h4 {
+  margin: rem(22) 0 rem(12);
+  font: bold rem(17)/#{(23/17)} 'Droid Sans', sans-serif;
+}
+.content h5 {
+  margin: rem(22) 0 rem(10);
+  font: bold rem(15)/#{(20/15)} 'Droid Sans', sans-serif;
+}
+.content h6 {
+  margin: rem(20) 0 rem(10);
+  font: bold rem(14)/#{(18/14)} 'Droid Sans', sans-serif;
+}

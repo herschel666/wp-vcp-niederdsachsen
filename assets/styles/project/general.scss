@@ -1,15 +1,132 @@
-/*
- * General
-**/
 
+/* General Structure and Styles
+--------------------------------------------- */
+html {
+  font-size: percentage(16/$base-font-size); // for `rem`-usage
+}
+body {
+  background-color: #ececec;
+  font: normal rem(16)/#{$base-line-height} 'Droid Sans', sans-serif;
+  color: #777;
+}
+.page-frame {
+  max-width: #{$page-width}px;
+  margin: rem(12) auto;
+  padding: 0 rem(30) rem(30);
+  background-color: white;
+  z-index: 0;
+}
+.wrap {
+  margin: rem(4) 0 0;
+  padding: rem(40) 0;
+  overflow: hidden;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.main {
+  width: percentage($main-width/$page-width);
+  float: left;
+  overflow: hidden;
+}
+.content {
+  width: percentage($content-width/$main-width);
+  float: left;
+}
+.secondary {
+  width: percentage($secondary-width/$main-width);
+  margin-left: percentage($secondary-margin-left/$main-width);
+  float: left;
+}
+.tertiary {
+  width: percentage($tertiary-width/$page-width);
+  float: right;
+  overflow: hidden;
+}
+.colophon {
+  width: percentage($colophon-width/$page-width);
+  float: left;
+  padding: rem(30) 0 0;
+  overflow: hidden;
+  font-size: rem(13);
+}
+.aligncenter,
+div.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}
 a {
-  color: #004287;
+  color: $ci-blue;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #777!important;
+  text-decoration: underline;
 }
 
-.pull-left {
-	float: left;
-	}
+@media screen and (max-width: #{$breakpoint-1}px) {
+  /* --- General --- */
+  .page-frame {
+    margin: 0 auto;
+    padding: 0 rem(30) rem(30);
+    background-color: white;
+    z-index: 0;
+  }
+  .wrap {
+    margin: rem(4) 0 0;
+    padding: rem(45) 0 0 0;
+    overflow: hidden;
+  }
+  .main {
+    width: percentage($main-width-bp1/$page-width-bp1);
+    float: left;
+    overflow: hidden;
+  }
+  .content {
+    width: percentage($content-width-bp1/$main-width-bp1);
+    float: left;
+  }
+  .secondary {
+    width: rem(142);
+    margin:rem(40) 0 0;
+    float: none;
+  }
+  .tertiary {
+    width: percentage($tertiary-width-bp1/$page-width-bp1);
+    float: right;
+  }
+}
 
-.pull-right {
-	float: right;
-	}
+@media screen and (max-width: #{$breakpoint-2}px) {
+  .page-frame {
+    padding: 0 rem(50) rem(30) rem(50);
+    background-color: white;
+  }
+  .wrap {
+    border-top: none;
+  }
+  .main,
+  .content,
+  .secondary,
+  .tertiary {
+    width: 100%;
+    float: none;
+  }
+  .main {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: #{$breakpoint-3}px) {
+  .page-frame {
+    padding: 0 rem(20) rem(20);
+    background-color: white;
+  }
+}

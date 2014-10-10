@@ -1,0 +1,232 @@
+
+/* Navigations
+--------------------------------------------- */
+/* --- Main Nav --- */
+.branding .mainnav {
+  margin: rem(30) 0 0;
+  max-width: 70%;
+  float:right;
+}
+.branding .mainnav ul li {
+  float: left;
+  list-style: none;
+  position: relative;
+}
+.branding .mainnav ul li a {
+  margin:0 0 0 rem(8);
+  padding: rem(9) rem(12);
+  display: block;
+  font-size: rem(13);
+  text-transform: uppercase;
+}
+.branding .mainnav ul li:first-child {
+  margin: 0;
+}
+.branding .mainnav ul li a:hover,
+.branding .mainnav ul li a:focus {
+  background: #F0F0F0;
+  color: #999;
+  text-decoration: none;
+}
+.branding .mainnav ul li ul.children,
+.branding .mainnav ul li ul.sub-menu {
+  overflow: hidden;
+  padding: 0;
+}
+.branding .mainnav ul li ul.children li,
+.branding .mainnav ul li ul.sub-menu li {
+  float: none;
+}
+.branding .mainnav ul li ul.children li a,
+.branding .mainnav ul li ul.sub-menu  li a {
+  display: inline;
+  line-height: 2;
+  text-transform: none;
+  padding:0 0 0 rem(12);
+}
+.branding .mainnav ul li ul.children li a:hover,
+.branding .mainnav ul li ul.children li a:focus,
+.branding .mainnav ul li ul.sub-menu li a:hover,
+.branding .mainnav ul li ul.sub-menu li a:focus {
+  background: none;
+  text-decoration: underline;
+}
+/* --- Sub Nav --- */ // Check, if used!!!
+nav.subnav {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+nav.subnav ul.menu {
+  margin: rem(5) 0 0 0;
+  padding: rem(16) 0 rem(30);
+  border-top: rem(1) solid #ddd;
+  overflow: hidden;
+}
+nav.subnav ul.menu li.menu-item {
+  width: 14.2468%;
+  margin: 0;
+  float: left;
+  list-style: none;
+}
+nav.subnav ul.menu li.menu-item a {
+  font-size: .8em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+nav.subnav ul.menu li.menu-item ul.sub-menu {
+  margin: 0;
+  padding: rem(6) 0 0;
+  overflow: hidden;
+}
+nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item {
+  width: 100%;
+  letter-spacing: 0;
+}
+nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item a {
+  font-size: .8em;
+  font-weight: normal;
+  line-height: 2;
+  text-transform: none;
+}
+.branding .mainnav ul ul {
+  float: left;
+  position: absolute;
+  top: 2em;
+  left: -999em;
+  z-index: 99999;
+}
+
+.branding .mainnav li:hover > a {
+  background: #F0F0F0;
+}
+
+.branding .mainnav ul li:hover > ul {
+  left: 0;
+}
+
+.branding .mainnav ul li ul.sub-menu li a {
+  width: 11em;
+  height: auto;
+  display: block;
+  line-height: 1.2;
+  background-color: #F9F9F9;
+  padding: 0.75em 1.166667em;
+  text-transform: none;
+}
+
+.branding .mainnav ul li ul.sub-menu li a:hover,
+.branding .mainnav ul li ul.sub-menu li a:focus {
+  background-color: #F0F0F0;
+  text-decoration: none;
+}
+
+@media screen and (max-width: #{$breakpoint-1}px) {
+  /* --- Sub Nav --- */ // Check if used!!
+  nav.subnav ul.menu li.menu-item {
+    width: 14.2468%;
+    margin: 0;
+    float: left;
+    list-style: none;
+  }
+  nav.subnav ul.menu li.menu-item a {
+    font-size: .72em;
+  }
+  nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: #{$breakpoint-2}px) {
+  /* --- Main Nav --- */
+  .branding .mainnav {
+    margin: rem(30) 0 0;
+    max-width: 100%;
+  }
+  .branding .mainnav ul li a {
+    margin: 0 0 0 rem(4);
+    padding: rem(9) rem(12);
+    font-size: rem(12);
+  }
+  /* --- Sub Nav --- */
+  nav.subnav {
+    padding: 0;
+    margin: rem(5) 0 0 0;
+  }
+  nav.subnav ul.menu {
+    padding: 0 0 rem(30);
+  }
+  nav.subnav ul.menu li.menu-item {
+    width: 100%;
+    margin: rem(6) 0 0;
+    float: none;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+  }
+  nav.subnav ul.menu li.menu-item a {
+    float: left;
+    margin: rem(6) rem(20) rem(10) rem(10);
+  }
+  nav.subnav ul.menu li.menu-item ul.sub-menu {
+    margin: 0;
+    padding: 0;
+    float: left;
+  }
+  nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item {
+    width: auto;
+    margin: 0;
+    float: left;
+    border-bottom:none;
+    letter-spacing: 0;
+  }
+  nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item a {
+    margin: 0 rem(20) 0 0;
+    font-size: .8em;
+    font-weight: normal;
+    line-height: 2;
+    text-transform: none;
+  }
+}
+
+@media screen and (max-width: #{$breakpoint-3}px) {
+  .branding .mainnav ul li a,
+  nav.subnav ul.menu li.menu-item,
+  nav.subnav ul.menu li.menu-item a {
+    margin: 0;
+  }
+  /* --- Main Nav --- */
+  .branding .mainnav ul li a {
+    padding: rem(8) rem(7);
+    display: block;
+    font-size: .7em;
+  }
+  /* --- Sub Nav --- */
+  nav.subnav ul.menu {
+    border-bottom: none;
+  }
+  nav.subnav ul.menu li.menu-item {
+    width: 100%;
+    float: none;
+    overflow: hidden;
+    background-color: #F0F0F0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  nav.subnav ul.menu li.menu-item a {
+    width: 100%;
+    margin: 0;
+    padding: 12px 0 11px;
+    float: left;
+    display: block;
+    background-color: #F0F0F0;
+  }
+  nav.subnav ul.menu li.menu-item a:hover,
+  nav.subnav ul.menu li.menu-item a:active,
+  nav.subnav ul.menu li.menu-item a:focus {
+    background: #D4D4D4;
+    text-decoration: none;
+  }
+  nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item {
+    display: none;
+  }
+}

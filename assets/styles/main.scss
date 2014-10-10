@@ -1,7 +1,21 @@
 
-@import 'project/variables';
+@import 'project/variables',
+        'project/functions',
+        'project/mixins';
 
-@import 'external/yoko-1.0';
-
-@import 'project/general',
-        'project/navigation';
+@import 'project/webfonts',
+        'project/reset',
+        'project/general',
+        'project/headlines',
+        'project/lists',
+        'project/header',
+        'project/navigations',
+        'project/posts',
+        'project/single-post',
+        'project/comments',
+        'project/post-formats',
+        'project/wp-image-gallery',
+        'project/pages',
+        'project/sidebars',
+        'project/footer',
+        'project/helpers';

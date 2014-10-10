@@ -1,0 +1,27 @@
+
+/* WordPress Image Gallery
+--------------------------------------------- */
+.content .post .gallery {
+  margin: auto;
+  padding:0;
+}
+.content .post .gallery .gallery-item {
+  width: 19%;
+  float: left;
+  margin-top: rem(10);
+  margin-right: rem(3);
+  text-align: center;
+  vertical-align: top;
+  overflow: hidden;
+}
+.content .post .gallery .gallery-icon {
+  width: 100%;
+}
+.content .post .gallery .gallery-caption {
+  margin-left: 0;
+  padding: 0;
+  font-size: rem(13);
+  line-height: 1.25;
+  color: #999;
+  display: block;
+}

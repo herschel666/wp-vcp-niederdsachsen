@@ -1,3 +1,36 @@
+
+// Breakpoints
+$breakpoint-1: 1024;
+$breakpoint-2: 880;
+$breakpoint-3: 620;
+
+// Dimensions
+$page-width: 1102;
+$page-width-bp1: 964;
+
+$main-width: 822;
+$main-width-bp1: 694;
+$tertiary-width: 262;
+$tertiary-width-bp1: 270;
+
+$content-width: 622;
+$content-width-bp1: 640;
+$secondary-width: 142;
+$secondary-width-bp1: 640;
+$secondary-margin-left: 58;
+
+$entry-detail-width: 158;
+$entry-content-width: 463;
+
+$colophon-width: 771;
+
+// Typography
+$base-font-size: 16;
+$base-line-height: 24/16;
+
 $std-ci: #004288;
 $std-text: #777;
 $std-border: #DDD;
+
+// Colors
+$ci-blue: #004287;

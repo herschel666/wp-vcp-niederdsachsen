@@ -1,0 +1,166 @@
+
+/* --- Comments --- */
+.comments {
+  font-size: rem(14);
+  padding: 0 0 rem(30) 0;
+}
+.comments h3.comments-title {
+  padding: rem(30) 0 rem(10);
+  font-size: rem(15);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: rem(3);
+}
+.comments p.write-comment-link {
+  padding: 0 0 rem(20);
+}
+.comments .comment-body p {
+  padding: 0 0 rem(10);
+}
+.comments p.moderation {
+  font-family: 'Droid Serif', serif;
+  font-style: italic;
+}
+.content .comments ol,
+.content .comments ol li ul.children,
+.content .comments ol li.depth-1 {
+  padding: 0;
+}
+.content .comments ol li.depth-1 {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+.content .comments ol li.depth-2,
+.content .comments ol li.depth-3,
+.content .comments ol li.depth-4,
+.content .comments ol li.depth-5 {
+  margin: 0 0 0 rem(35);
+  padding: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: none;
+  overflow: hidden;
+}
+.comment-meta {
+  padding: 0 0 rem(12);
+  font-size: rem(11);
+}
+.comment-meta cite.fn {
+  font-size: rem(15);
+  font-weight: bold;
+}
+.comments .comment-body {
+  padding: rem(20) 0;
+  overflow: hidden;
+  line-height: #{(21/14)};
+}
+.reply {
+  margin: 0;
+  float: left;
+}
+a.comment-reply-link {
+  font-size: rem(13);
+}
+.comments ol li.post.pingback {
+  margin: 0;
+  padding: rem(20) 0 0;
+  list-style: none;
+  font-weight: bold;
+}
+.comments ol li.post.pingback a {
+  font-weight: normal;
+}
+.comments ol li img.avatar {
+  width: rem(65);
+  height: rem(65);
+  margin: rem(22) rem(15) 0 0;
+  float: left;
+}
+/* --- Comment Reply --- */
+.content .comments #respond {
+  margin: rem(30) 0 0;
+  padding: rem(20);
+  background-color: #F0F0F0;
+}
+a#cancel-comment-reply-link {
+  padding: rem(3) 0 0;
+  float: right;
+  font-size: rem(12);
+  font-weight: normal;
+}
+.content .comment-reply-title {
+  margin:0 0 rem(3) 0;
+  font-size: rem(17);
+}
+#commentform p.comment-notes,
+p.logged-in-as {
+  padding:0 0 rem(15) 0;
+  font-size: rem(12);
+}
+#commentform span.required {
+  color: #E75428;
+}
+#commentform p.comment-form-author,
+#commentform p.comment-form-email,
+#commentform p.comment-form-url,
+#commentform p.comment-form-comment {
+  padding: rem(15) 0 0;
+}
+#submit,
+input.wpcf7-submit {
+  margin: rem(10) 0 0;
+  padding: rem(8) rem(10) rem(7);
+  display: inline-block;
+  vertical-align: baseline;
+  outline: none;
+  background-color: #777;
+  border: none;
+  font-size: rem(11);
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+#submit:hover,
+#submit:focus,
+input.wpcf7-submit:hover,
+input.wpcf7-submit:focus {
+  background-color: #009BC2;
+  color: #fff;
+}
+#comment {
+  width: 100%;
+  margin: rem(5) 0 0;
+  padding: rem(9) rem(5);
+  background-color: white;
+  border: 1px solid #ddd;
+  font: rem(14) 'Droid Sans', sans-serif;
+  resize: vertical;
+  color: #777;
+  @include box-sizing (border-box);
+}
+p.subscribe-to-doi-comments {
+  padding: rem(20) 0 0;
+  font-size: rem(12);
+  color: #666;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: #{$breakpoint-3}px) {
+  .content .comments ol li.depth-2,
+  .content .comments ol li.depth-3,
+  .content .comments ol li.depth-4,
+  .content .comments ol li.depth-5 {
+    margin: 0;
+  }
+  form#commentform input#author,
+  form#commentform input#email,
+  form#commentform input#url {
+    width: 95%;
+  }
+  a#cancel-comment-reply-link {
+    width: 100%;
+    margin: rem(5) 0 rem(15);
+    display: block;
+  }
+}

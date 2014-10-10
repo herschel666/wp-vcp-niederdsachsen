@@ -1,0 +1,19 @@
+
+/* Clearing Floats
+--------------------------------------------- */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+  content: '';
+  display: table;
+}

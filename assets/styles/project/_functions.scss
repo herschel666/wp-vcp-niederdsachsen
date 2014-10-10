@@ -1,0 +1,12 @@
+
+@function strip-unit($val) {
+  @return $val / ($val * 0 + 1);
+}
+
+@function em($px, $base: $base-font-size) {
+  @return (strip-unit($px) / $base) * 1em;
+}
+
+@function rem($px) {
+  @return (strip-unit($px) / $base-font-size) * 1rem;
+}

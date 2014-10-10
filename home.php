@@ -25,7 +25,7 @@ get_header(); ?>
 
       <?php the_post(); ?>
 
-      <?php get_template_part('content', 'page'); ?>
+      <?php get_template_part('content', 'post'); ?>
 
       <div class="latest-posts clearfix">
         <h2 class="latest-posts-caption">Neueste Beiträge</h2>

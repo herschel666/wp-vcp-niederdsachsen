@@ -1,0 +1,134 @@
+
+/* Single Posts
+--------------------------------------------- */
+.content .post .single-entry-header {
+  margin: 0;
+}
+.content .single-entry-header h1.entry-title {
+  margin: 0 0 rem(5);
+  font: bold rem(20)/#{(27/20)} 'Droid Sans', sans-serif;
+  color: $ci-blue;
+}
+.content .single-entry-header p {
+  padding: 0 0 rem(5);
+  font-size: rem(12);
+}
+.content .single-entry-header p span.entry-date,
+.content .single-entry-header p span.entry-author {
+  font: italic rem(12)/#{(18/12)} 'Droid Serif', serif;
+}
+.content .single-entry-details {
+  width: percentage($entry-detail-width/$content-width);
+  padding: 0 rem(18) 0 0;
+  float: left;
+  @include box-sizing (border-box);
+}
+.content .single-entry-content {
+  width: 100%;
+  margin: rem(15) 0 0;
+  padding: 0;
+  float: left;
+}
+.content .post .single-entry-meta p {
+  padding: rem(15) 0 0;
+  font: italic rem(12)/#{(18/12)} 'Droid Serif', serif;
+}
+.content .post .single-entry-meta p a {
+  font-family:'Droid Sans', sans-serif;
+  font-style: normal;
+}
+.content .post .author-info {
+  margin: rem(40) 0 0;
+  padding: rem(15) rem(20) rem(15);
+  background: #F0F0F0;
+  overflow: hidden;
+  border-top: 1px solid #ddd;
+}
+.content .post .author-info h3 {
+  margin: 0 0 rem(4);
+  font: bold rem(14)/#{(20/14)} 'Droid Sans', sans-serif;
+}
+.content .post .author-info .avatar {
+  width: rem(70);
+  margin: 0 rem(15) 0 0;
+  float: left;
+}
+.content .post .author-description {
+  overflow: hidden;
+}
+.content .post .author-description p {
+  padding: 0;
+  font-size: rem(14);
+  line-height: #{(20/14)};
+}
+.content .post .author-description a:hover,
+.content .post .author-description a:focus {
+  text-decoration: underline;
+}
+/* --- Post Nav Below --- */
+.content .image-nav {
+  margin: rem(30) 0 rem(3) 0;
+  overflow: hidden;
+}
+.content .nav-below a {
+  display: block;
+  font-size: rem(14);
+  font-weight: bold;
+}
+.content .nav-below .nav-previous a,
+.content .image-nav span.previous-image a {
+  width: 40%;
+  float: left;
+}
+.content .nav-below .nav-next a,
+.content .image-nav span.next-image a {
+  float: right;
+}
+.content .nav-below .nav-previous a:hover,
+.content .nav-below .nav-previous a:focus,
+.content .nav-below .nav-next a:hover,
+.content .nav-below .nav-next a:focus,
+.content .image-nav span.previous-image a:hover,
+.content .image-nav span.previous-image a:focus,
+.content .image-nav span.next-image a:hover,
+.content .image-nav span.next-image a:focus {
+  text-decoration: none;
+}
+
+@media screen and (max-width: #{$breakpoint-2}px) {
+  /* --- Post Content --- */
+  .content .entry-content {
+    float: left;
+  }
+  .content .entry-details {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: #{$breakpoint-3}px) {
+  .content .post .author-description p {
+    font-size: rem(12);
+    line-height: #{(17/12)};
+  }
+  .content .single-entry-details,
+  .content .single-entry-header .social-btn-top {
+    display: none;
+  }
+  .content .nav-below .nav-previous a {
+    width: 100%;
+    display: block;
+    float: none;
+    margin: 0 0 rem(10);
+  }
+  .content .nav-below .nav-next a {
+    width: 100%;
+    display: block;
+    text-align: right;
+  }
+  .content .nav-below .nav-previous a:hover,
+  .content .nav-below .nav-previous a:focus,
+  .content .nav-below .nav-next a:hover,
+  .content .nav-below .nav-next a:focus {
+    text-decoration: none;
+  }
+}
