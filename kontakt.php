@@ -2,9 +2,6 @@
 /**
  * Template Name: Kontakt
  * Description: Darstellung von Uebersicht & Einzel-Formularen
- *
- * @package WordPress
- * @subpackage Yoko
  */
 
 $formId = isset($_GET['form']) && !empty($_GET['form'])

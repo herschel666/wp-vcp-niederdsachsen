@@ -1,10 +1,3 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Yoko
- */
-?>
-
   </div><!-- end wrap -->
 
   <footer class="colophon clearfix">
@@ -14,6 +7,22 @@
 
 </div><!-- end page -->
 <?php wp_footer(); ?>
+
+<?php if ( is_home() ) : ?>
+  <?php
+  /**
+   * Facebook-Widget der VCP-Nds-Seite
+   */
+  ?>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&appId=1502549699992417&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+<?php endif; ?>
 
 </body>
 </html>

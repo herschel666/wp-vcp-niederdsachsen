@@ -25,6 +25,11 @@ aside.widget ul li:last-child {
 .textwidget {
   line-height: 1.6;
 }
+.widget-events .event-meta {
+  display: block;
+  font-size: rem(11);
+}
+
 /* --- Standard Widgets --- */
 .widget_categories ul li ul.children,
 .widget_nav_menu ul li ul.sub-menu,

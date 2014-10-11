@@ -1,10 +1,4 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Yoko
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <div class="wrap">
   <div class="main">

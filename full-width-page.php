@@ -2,9 +2,6 @@
 /**
  * Template Name: Full-width, no sidebar
  * Description: A full-width template with no sidebar
- *
- * @package WordPress
- * @subpackage Yoko
  */
 
 get_header(); ?>

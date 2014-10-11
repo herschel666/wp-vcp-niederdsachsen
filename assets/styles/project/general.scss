@@ -27,15 +27,33 @@ body {
   width: percentage($main-width/$page-width);
   float: left;
   overflow: hidden;
+
+  &.main-home {
+    width: auto;
+    float: none;
+    @extend .clearfix;
+  }
+
 }
 .content {
   width: percentage($content-width/$main-width);
   float: left;
+
+  &.content-home {
+    width: percentage($content-width/$page-width);
+  }
+
 }
 .secondary {
   width: percentage($secondary-width/$main-width);
   margin-left: percentage($secondary-margin-left/$main-width);
   float: left;
+
+  &.secondary-home {
+    width: percentage($secondary-width-home/$page-width);
+    float: right;
+  }
+
 }
 .tertiary {
   width: percentage($tertiary-width/$page-width);

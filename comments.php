@@ -1,10 +1,3 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Yoko
- */
-?>
-
 <div id="comments" class="comments clearfix">
 <?php if ( post_password_required() ) : ?>
   <div class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'yoko' ); ?></div>

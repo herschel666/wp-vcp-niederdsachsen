@@ -1,10 +1,3 @@
-<?php
-/**
- * @package WordPress
- * @subpackage Yoko
- */
-?>
-
   <div class="secondary widget-area" role="complementary">
     <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 

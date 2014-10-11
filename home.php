@@ -2,16 +2,13 @@
 /**
  * Template Name: Home
  * Description: Startseiten-Template
- *
- * @package WordPress
- * @subpackage Yoko
  */
 
 require_once(ABSPATH . WPINC . '/feed.php');
 
 $rss = fetch_feed('http://www.cemp-online.de/feed/');
 
-if ( !is_wp_error( $rss ) ) {
+if ( !is_wp_error($rss) ) {
   $maxitems = $rss->get_item_quantity(5);
   $cempNews = $rss->get_items(0, $maxitems);
 }
