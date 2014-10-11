@@ -119,7 +119,14 @@ aside.widget ul li:last-child {
   background: url(assets/images/twitter-icon.png) 0 0 no-repeat;
 }
 .widget_sociallinks a.facebook {
-  background: url(assets/images/fb-icon.png) 0 0 no-repeat;
+  padding: 0;
+  @extend .icon;
+  @extend .icon-facebook;
+
+  &:before {
+    margin-right: rem(5);
+  }
+
 }
 .widget_sociallinks a.flickr {
   background: url(assets/images/flickr-icon.png) 0 0 no-repeat;

@@ -17,6 +17,10 @@ $ cd wp-vcp-niederdsachsen
 $ bower install && npm install
 ```
 
+## Icon Font
+
+The theme uses a custom icon font. To edit/change/extend it, grab the [`selection.json`](https://github.com/herschel666/wp-vcp-niederdsachsen/tree/master/assets/fonts/selection.json), go to [Icomoon](https://icomoon.io/app/), import the JSON-file and make your changes. After that, download the new package, swap the font-files and the `selection.json` in the `assets/fonts`-folder and make the changes to the CSS in the `webfonts.scss`-file. That should do the trick.
+
 ## Contributing
 
 If there's a problem, open an issue. If you're feeling brave and want to contribute code, I highly encourage you to do so. In this case follow these steps:

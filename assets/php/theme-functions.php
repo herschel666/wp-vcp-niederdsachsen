@@ -22,6 +22,16 @@ add_filter('wp_headers', 'remove_x_pingback');
 
 
 /**
+ * Tablepress-Styles entfernen. Sind in
+ * die Theme-Styles integriert.
+ */
+function remove_plugin_styles() {
+  wp_dequeue_style('tablepress-default');
+}
+
+add_action('wp_print_styles', 'remove_plugin_styles', 100);
+
+/**
  * Wird ein User per WP-Members aktiviert, wird dessen
  * Passwort automatisch auf 'Willkommen#1' gesetzt. Anders
  * laesst sich eine Default-Passwort-Loesung nicht integrieren.
