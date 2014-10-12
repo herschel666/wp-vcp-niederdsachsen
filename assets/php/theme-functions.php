@@ -80,3 +80,23 @@ function getContactForm($id = null) {
   return $result;
 
 }
+
+/**
+ * Gibt eine Event-Location anhand der Location-ID zurueck.
+ *
+ * @param  Number $locationId
+ * @return String|null
+ */
+function getEventLocation($locationId = null) {
+
+  if ( is_null($locationId) ) {
+    return null;
+  }
+
+  global $wpdb;
+  $query = 'SELECT ' . $wpdb->prefix . 'em_locations.location_town ' .
+          'FROM ' . $wpdb->prefix . 'em_locations ' .
+          'WHERE ' . $wpdb->prefix . 'em_locations.location_id = ' . (int) $locationId;
+  return $wpdb->get_var($query);
+
+}

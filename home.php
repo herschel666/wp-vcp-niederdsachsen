@@ -4,15 +4,6 @@
  * Description: Startseiten-Template
  */
 
-require_once(ABSPATH . WPINC . '/feed.php');
-
-$rss = fetch_feed('http://www.cemp-online.de/feed/');
-
-if ( !is_wp_error($rss) ) {
-  $maxitems = $rss->get_item_quantity(5);
-  $cempNews = $rss->get_items(0, $maxitems);
-}
-
 get_header(); ?>
 
 <div class="wrap">
@@ -22,7 +13,7 @@ get_header(); ?>
 
       <?php the_post(); ?>
 
-      <?php get_template_part('content', 'post'); ?>
+      <?php get_template_part('content', 'page'); ?>
 
       <div class="latest-posts clearfix">
         <h2 class="latest-posts-caption">Neueste Beiträge</h2>
