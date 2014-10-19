@@ -15,14 +15,14 @@ get_header(); ?>
 
       <?php get_template_part('content', 'page'); ?>
 
-      <div class="latest-posts clearfix">
+      <div class="latest-posts">
         <h2 class="latest-posts-caption">Neueste Beiträge</h2>
         <?php
         /**
          * Neueste Beitraege (ausser Ankuendigungen)
          */
         $latestPostsArgs = array(
-          'numberposts' => 4,
+          'numberposts' => 6,
           'category' => -1
         );
         $latestPosts = wp_get_recent_posts($latestPostsArgs, OBJECT);
@@ -31,7 +31,7 @@ get_header(); ?>
         foreach ( $latestPosts as $latestPost ) :
         ?>
           <?php
-            $className = !$counter ? 'left' : 'right';
+            $className = !$counter ? 'latest-post-left' : 'latest-post-right';
             $excerpt = wp_trim_words($latestPost->post_content, 10, '');
             // Shortcode rausfiltern
             $excerpt = preg_replace('/(\[[^]]+\])?/', '', $excerpt);
@@ -45,7 +45,7 @@ get_header(); ?>
             <div class="latest-post-date">
               Veröffentlicht am
               <time datetime="<?php echo date('Y-m-d', strtotime($latestPost->post_date)); ?>">
-                <?php echo date('j.n.Y', strtotime($latestPost->post_date)); ?>
+                <?php echo date_i18n(get_option('date_format'), strtotime($latestPost->post_date)); ?>
               </time>
             </div>
             <p class="latest-post-content">
@@ -63,6 +63,27 @@ get_header(); ?>
         <?php unset($counter); ?>
         <?php unset($excerpt); ?>
       </div><!-- end latest-posts -->
+
+      <?php
+        $thumbs = getRandomNextGenPics();
+        if ( count($thumbs) ) :
+      ?>
+        <?php $count = 0; ?>
+        <div class="photo-widget clearfix" id="photo-widget">
+          <h2 class="photo-widget-caption">Aktuelle Fotos</h2>
+          <?php foreach ( $thumbs as $thumb ) : ?>
+            <?php $path = get_option('home') . '/' . $thumb->path . '/'; ?>
+            <?php $count++; ?>
+            <div class="photo-widget-thumb photo-widget-thumb-<?php echo $count; ?>" id="photo-widget-thumb-<?php echo $count; ?>">
+              <a href="<?php echo $path . $thumb->filename; ?>" rel="lightbox[photo-widget-thumb-<?php echo $count; ?>]">
+                <img src="<?php echo $path . 'thumbs/thumbs_' . $thumb->filename; ?>" alt="">
+              </a>
+            </div>
+          <?php endforeach; ?>
+          <?php unset($count); ?>
+        </div>
+      <?php endif; ?>
+      <?php unset($thumbs); ?>
 
     </div><!-- end content -->
 

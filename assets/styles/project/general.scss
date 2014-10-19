@@ -134,11 +134,19 @@ a:focus {
   .content,
   .secondary,
   .tertiary {
-    width: 100%;
+    width: auto;
     float: none;
   }
   .main {
     overflow: hidden;
+  }
+}
+
+@media screen and (max-width: #{$breakpoint-2}px) {
+  .content.content-home,
+  .secondary.secondary-home {
+    width: auto;
+    float: none;
   }
 }
 

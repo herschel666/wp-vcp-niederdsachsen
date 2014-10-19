@@ -100,3 +100,20 @@ function getEventLocation($locationId = null) {
   return $wpdb->get_var($query);
 
 }
+
+/**
+ * Holt die zehn neuesten Bilder aus den Next-Gen-Galerien.
+ *
+ * @return Array
+ */
+function getRandomNextGenPics() {
+
+  global $wpdb;
+  $query = 'SELECT ' . $wpdb->prefix . 'ngg_pictures.filename, ' . $wpdb->prefix . 'ngg_gallery.path' .
+          ' FROM ' . $wpdb->prefix . 'ngg_pictures, ' . $wpdb->prefix . 'ngg_gallery' .
+          ' WHERE ' . $wpdb->prefix . 'ngg_pictures.galleryid = ' . $wpdb->prefix . 'ngg_gallery.gid' .
+          ' ORDER BY ' . $wpdb->prefix . 'ngg_pictures.imagedate DESC' .
+          ' LIMIT 10';
+  return  $wpdb->get_results($query);
+
+}

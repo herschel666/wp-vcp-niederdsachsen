@@ -3,6 +3,9 @@
         'project/functions',
         'project/mixins';
 
+// Third-party
+@import '../vendor/magnific-popup/src/css/main';
+
 @import 'project/webfonts',
         'project/reset',
         'project/general',
@@ -17,6 +20,7 @@
         'project/wp-image-gallery',
         'project/pages',
         'project/tablepress',
+        'project/gallery',
         'project/sidebars',
         'project/footer',
         'project/helpers';

@@ -34,6 +34,29 @@
 .full-width .content .page {
   margin: 0;
 }
+/* Frontpage
+--------------------------------------------- */
+.latest-posts {
+  .latest-post {
+    width: 50%;
+    margin-bottom: rem(16);
+    float: left;
+    @include box-sizing(border-box);
+    &.latest-post-left {
+      padding-right: rem(16);
+    }
+    &.latest-post-right {
+      padding-left: rem(16);
+    }
+  }
+  .latest-post-title,
+  .latest-post-date {
+    margin-bottom: rem(6);
+  }
+  .latest-post-date {
+    font-size: rem(12);
+  }
+}
 /* --- Archive, 404, Search Results --- */
 .content .page-header h1.page-title {
   padding: 0 0 rem(20) 0;
@@ -76,8 +99,17 @@
 }
 
 @media screen and (max-width: #{$breakpoint-3}px) {
-  /* --- Pages ---- */
   .content .page .wpcf7 input.textfield {
     width: 95%;
+  }
+  .latest-posts .latest-post {
+    width: auto;
+    float: none;
+    &.latest-post-left {
+      padding-right: 0;
+    }
+    &.latest-post-right {
+      padding-left: 0;
+    }
   }
 }

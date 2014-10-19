@@ -59,7 +59,7 @@
         $latestNewsArgs = array(
           'numberposts' => 5,
           'post_status' => 'publish',
-          'category' => 'ankuendigungen'
+          'category' => 1
         );
         $latestNews = wp_get_recent_posts($latestNewsArgs, OBJECT);
 
@@ -69,6 +69,9 @@
           <a href="<?php echo get_permalink($latestNewsItem->ID); ?>">
             <?php echo $latestNewsItem->post_title; ?>
           </a>
+          <small class="widget-meta">
+            Geschrieben am <?php echo date_i18n(get_option('date_format'), strtotime($latestNewsItem->post_date)); ?>
+          </small>
         </li>
       <?php endforeach; ?>
       <?php unset($latestNewsArgs); ?>
@@ -91,7 +94,9 @@
               <a href="<?php echo esc_url($cempNewsItem->get_permalink()); ?>">
                 <?php echo esc_html($cempNewsItem->get_title()); ?>
               </a>
-              <small class="widget-meta">Geschrieben am <?php echo $cempNewsItem->get_date(get_option('date_format')); ?></small>
+              <small class="widget-meta">
+                Geschrieben am <?php echo $cempNewsItem->get_date(get_option('date_format')); ?>
+              </small>
             </li>
           <?php endforeach; ?>
         </ul>

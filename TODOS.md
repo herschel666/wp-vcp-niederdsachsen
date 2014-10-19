@@ -1,6 +1,7 @@
 - [x] CSS refaktorieren und in SCSS überführen
-- [ ] Startseite anpassen
+- [x] Startseite anpassen
 - [ ] vernünftige Mobile-Navigation (Off-Canvas-Gelöt?!?)
 - [ ] Event-Seite anhübschen
 - [ ] mittlere Spalte in den Footer befördern
+- [ ] Font-Loading optimieren
 - [ ] …

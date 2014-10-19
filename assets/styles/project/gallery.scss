@@ -1,0 +1,33 @@
+
+/* Galleries & related
+--------------------------------------------- */
+
+.photo-widget-thumb {
+  width: 18%;
+  padding: 0 2.5% rem(10) 0;
+  margin-bottom: rem(2);
+  float: left;
+  &.photo-widget-thumb-5,
+  &.photo-widget-thumb-10 {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: #{$breakpoint-4}px) {
+  .photo-widget-thumb {
+    width: 30%;
+    &,
+    &.photo-widget-thumb-5,
+    &.photo-widget-thumb-10 {
+      padding-right: 3.3333%
+    }
+    &.photo-widget-thumb-3,
+    &.photo-widget-thumb-6,
+    &.photo-widget-thumb-9 {
+      padding-right: 0%
+    }
+    &.photo-widget-thumb-10 {
+      margin-left: 33.3333%;
+    }
+  }
+}

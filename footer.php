@@ -24,5 +24,14 @@
   }(document, 'script', 'facebook-jssdk'));</script>
 <?php endif; ?>
 
+<script>
+  (function (v, c, p) {
+    var l = v.getElementsByTagName(c)[0],
+        e = v.createElement(c);
+    e.type = 'text/javascript'; e.src = p; e.async = true;
+    l.parentNode.insertBefore(e, l);
+  })(document, 'script', '<?php bloginfo("template_url"); ?>/assets/scripts/main.js');
+</script>
+
 </body>
 </html>

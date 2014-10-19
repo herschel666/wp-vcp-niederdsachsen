@@ -22,6 +22,8 @@ module.exports = (grunt) ->
 
     paths:
       styles: 'assets/styles/'
+      scripts: 'assets/scripts/'
+      vendor: 'assets/vendor/'
 
     sass:
       options:
@@ -41,15 +43,36 @@ module.exports = (grunt) ->
 
     clean:
       sass: ['<%= paths.styles %>.tmp.css']
+      js: ['<%= paths.styles %>main.js', '<%= paths.styles %>main.min.js']
 
     watch:
-      css:
-        files: 'assets/styles/**/*.scss'
-        tasks: ['scss']
+      dev:
+        files: ['<%= paths.styles %>**/*.scss', '<%= paths.scripts %>project/*.js']
+        tasks: ['scss', 'js']
+
+    concat:
+      options:
+        separator: ';'
+      dist:
+        src: [
+          '<%= paths.vendor %>magnific-popup/dist/jquery.magnific-popup.js'
+          '<%= paths.scripts %>project/*.js'
+        ]
+        dest: '<%= paths.scripts %>main.js'
+
+    uglify:
+      dist:
+        files:
+          '<%= paths.scripts %>main.min.js': ['<%= paths.scripts %>main.js']
+
 
   grunt.loadNpmTasks 'grunt-sass'
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
 
   grunt.registerTask 'scss', ['sass', 'copy:sass', 'clean:sass']
+  grunt.registerTask 'js', ['clean:js', 'concat:dist']
+  grunt.registerTask 'build', ['scss', 'js', 'uglify:dist']
