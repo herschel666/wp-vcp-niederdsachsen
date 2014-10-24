@@ -1,8 +1,0 @@
-- [x] CSS refaktorieren und in SCSS überführen
-- [x] Startseite anpassen
-- [ ] vernünftige Mobile-Navigation (Off-Canvas-Gelöt?!?)
-- [ ] Event-Seite anhübschen
-- [ ] mittlere Spalte in den Footer befördern
-- [ ] Composer-Workflow integrieren (http://roots.io/using-composer-with-wordpress/)
-- [ ] Font-Loading optimieren
-- [ ] …
