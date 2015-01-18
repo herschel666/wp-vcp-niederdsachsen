@@ -23,10 +23,10 @@ get_header(); ?>
             </h2>
           </header><!-- end entry-header -->
           <div class="single-entry-content">
-            <?php echo do_shortcode($formObj['shortcode']); ?>
             <p>
               <a href="javascript:history.back();">&larr; zurück</a>
             </p>
+            <?php echo do_shortcode($formObj['shortcode']); ?>
           </div>
         </article>
       <?php else : ?>
