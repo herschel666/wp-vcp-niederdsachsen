@@ -97,11 +97,13 @@ nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item a {
   z-index: 99999;
 }
 
-.branding .mainnav li:hover > a {
+.branding .mainnav li:hover > a,
+.branding .mainnav li:focus > a {
   background: #F0F0F0;
 }
 
-.branding .mainnav ul li:hover > ul {
+.branding .mainnav ul li:hover > ul,
+.branding .mainnav ul li:focus > ul {
   left: 0;
 }
 
@@ -188,17 +190,89 @@ nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item a {
   }
 }
 
+.mainnav-toggle {
+  height: rem(-42);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: rem(-42);
+  display: none;
+  background-color: $ci-blue;
+}
+
+.mainnav-toggle-btn {
+  padding: 0;
+  margin-left: rem(20);
+  border: none;
+  background: none;
+  color: white;
+  font-size: rem(32);
+  line-height: #{(42/32)};
+  @include appearance (none);
+}
+
+.sub-menu-toggle {
+  display: none;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: rem(20);
+  line-height: #{(42/20)};
+  color: $std-text;
+  @include appearance (none);
+}
+
 @media screen and (max-width: #{$breakpoint-3}px) {
+
+  .branding .mainnav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    float: none;
+    background-color: white;
+    @include transition (all .4s ease-in-out);
+    @include transform (translateY(-100%) translateZ(0));
+    @include backface-visibility(none);
+  }
+
+  .mainnav-toggle,
+  .sub-menu-toggle {
+    display: block;
+  }
+
+  .menu-menue-container {
+  padding: 0 rem(20);
+  }
+
+  .branding .mainnav ul li {
+    float: none;
+    display: block;
+  }
+
   .branding .mainnav ul li a,
   nav.subnav ul.menu li.menu-item,
   nav.subnav ul.menu li.menu-item a {
     margin: 0;
+    white-space: nowrap;
+  }
+  .branding .mainnav ul li a {
+    line-height: #{(32/11)};
   }
   /* --- Main Nav --- */
   .branding .mainnav ul li a {
-    padding: rem(8) rem(7);
+    padding: rem(8) 0;
     display: block;
     font-size: .7em;
+  }
+  .branding .mainnav ul li.current-menu-ancestor .sub-menu {
+    display: block;
+  }
+  .branding .mainnav ul li.current-menu-ancestor a {
+    margin-right: rem(40);
   }
   /* --- Sub Nav --- */
   nav.subnav ul.menu {
@@ -226,7 +300,23 @@ nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item a {
     background: #D4D4D4;
     text-decoration: none;
   }
+  .branding .mainnav ul ul {
+    float: none;
+    position: static;
+    display: none;
+    margin-bottom: rem(5);
+  }
+  .branding.branding.branding .mainnav li:hover a,
+  .branding.branding.branding .mainnav li:focus a {
+    background: white;
+  }
   nav.subnav ul.menu li.menu-item ul.sub-menu li.menu-item {
     display: none;
   }
+  .branding .mainnav ul li ul.sub-menu li a {
+    width: auto;
+    display: block;
+    background-color: white;
+  }
+
 }

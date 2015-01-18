@@ -1,6 +1,28 @@
 
+@mixin appearance($val) {
+  -webkit-appearance: $val;
+  appearance: $val;
+}
+
+@mixin backface-visibility($val) {
+  -webkit-backface-visibility: $val;
+  backface-visibility: $val;
+}
+
 @mixin box-sizing($val) {
   -webkit-box-sizing: $val;
   -moz-box-sizing: $val;
   box-sizing: $val;
+}
+
+@mixin transform($val) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  transform: $val;
+}
+
+@mixin transition($val) {
+  -webkit-transition: $val;
+  -moz-transition: $val;
+  transition: $val;
 }

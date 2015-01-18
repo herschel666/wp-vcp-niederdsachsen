@@ -13,8 +13,13 @@
 <body <?php body_class(); ?>>
   <div id="page" class="page-frame clearfix">
     <header class="branding">
-      <nav class="mainnav clearfix">
+      <nav class="mainnav clearfix" id="mainnav">
         <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        <div class="mainnav-toggle">
+          <button class="mainnav-toggle-btn js-mainnav-toggle-btn" type="button">
+            <i class="icon icon-menu" aria-hidden="true"></i>
+          </button>
+        </div>
       </nav><!-- end mainnav -->
 
       <?php global $yoko_options;
