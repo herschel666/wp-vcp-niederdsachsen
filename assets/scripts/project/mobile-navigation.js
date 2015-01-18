@@ -3,7 +3,8 @@ jQuery(function ($, undefined) {
 
   var navIsHidden = true;
 
-  var $mainnav = $('#mainnav'),
+  var $win = $(window),
+      $mainnav = $('#mainnav'),
       $parents = $mainnav.find('.menu-item-has-children');
 
   function getSubToggle(_open) {
@@ -38,7 +39,15 @@ jQuery(function ($, undefined) {
     $subNav[method]();
   }
 
+  function clearNavigation() {
+    if ( $win.width() < 880 ) {
+      return;
+    }
+    $mainnav.removeAttr('style');
+  }
+
   $mainnav.on('click', '.js-mainnav-toggle-btn', toggleNav);
+  $win.on('resize', clearNavigation);
   $parents.each(insertSubToggle);
 
 });
