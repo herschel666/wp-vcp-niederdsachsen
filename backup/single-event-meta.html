@@ -1,0 +1,38 @@
+<!--
+/**
+ * Hier einfuegen:
+ *
+ * http://www.vcp-niedersachsen.de/wp-admin/edit.php?post_type=event&page=events-manager-options#general
+ *
+ * "Formatierung" => "Einzelne Veranstaltung - Seite"
+ *
+ * (Außerdem muss die Kartenbreite auf 100% gesetzt werden!!!)
+ */
+-->
+<div class="event-meta grid">
+  <div class="three-columns-one">
+    <div class="event-meta-bit">
+      <strong>Datum/Zeit</strong><br/>
+      #_EVENTDATES<br /><i>#_EVENTTIMES</i>
+    </div>
+    {has_location}
+      <div class="event-meta-bit">
+        <strong>Veranstaltungsort</strong><br/>
+        #_LOCATIONLINK
+      </div>
+    {/has_location}
+    <div class="event-meta-bit">
+      <strong>Kategorien</strong>
+      #_CATEGORIES
+    </div>
+  </div>
+  <div class="three-columns-two last">#_LOCATIONMAP</div>
+</div>
+<div class="event-info">
+  #_EVENTNOTES
+  {has_bookings}
+    <h3>Für diese Veranstaltung anmelden:</h3>
+    <p>Die mit * gekennzeichneten Felder müssen ausgefüllt werden.</p>
+    #_BOOKINGFORM
+  {/has_bookings}
+</div>

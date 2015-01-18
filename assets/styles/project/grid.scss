@@ -3,15 +3,15 @@
   @extend .clearfix;
 }
 
-.two-columns-one{
+.two-columns-one {
   width: 48%;
 }
 
-.three-columns-one{
+.three-columns-one {
   width: 30.66%;
 }
 
-.three-columns-two{
+.three-columns-two {
   width: 65.33%;
 }
 
@@ -33,7 +33,7 @@
   position: relative;
 }
 
-.last{
+.last {
   clear: right;
   margin-right: 0 !important;
 }

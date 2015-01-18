@@ -32,6 +32,10 @@ body {
 .content {
   width: percentage($content-width/$page-width);
   float: left;
+  &.full-width {
+    width: auto;
+    float: none;
+  }
 }
 .secondary {
   width: percentage($secondary-width/$page-width);
