@@ -114,7 +114,7 @@ a:focus {
 
 @media screen and (max-width: #{$breakpoint-3}px) {
   .page-frame {
-    padding: 0 rem(20) rem(20);
+    padding: rem(40) rem(20) rem(20);
     background-color: white;
   }
 }
