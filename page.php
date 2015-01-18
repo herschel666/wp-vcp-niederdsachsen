@@ -1,17 +1,23 @@
-<?php get_header(); ?>
+<?php
+/**
+ * @package WordPress
+ * @subpackage Yoko
+ */
 
-<div class="wrap">
-  <div class="main">
+get_header(); ?>
 
-    <div class="content">
+<div id="wrap">
+<div id="main">
 
-      <?php the_post(); ?>
+	<div id="content">
 
-      <?php get_template_part( 'content', 'page' ); ?>
+				<?php the_post(); ?>
 
-      <?php comments_template( '', true ); ?>
+				<?php get_template_part( 'content', 'page' ); ?>
 
-    </div><!-- end content -->
+				<?php comments_template( '', true ); ?>
 
-  <?php get_sidebar(); ?>
+	</div><!-- end content -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -1,28 +1,30 @@
-<?php get_header(); ?>
+<?php
+/**
+ * @package WordPress
+ * @subpackage Yoko
+ */
 
-<div class="wrap">
-  <div class="main">
+get_header(); ?>
 
-    <div class="content">
+<div id="wrap">
+<div id="main">
 
-      <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	<div id="content">
 
-        <?php get_template_part('content', 'single'); ?>
+	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-        <?php comments_template('', true); ?>
+			<?php get_template_part('content', 'single'); ?>
 
-      <?php endwhile; // end of the loop. ?>
+			<?php comments_template('', true); ?>
 
-      <nav class="nav-below">
-        <div class="nav-previous">
-          <?php next_post_link('%link', __( '&larr; Previous Post', 'yoko')); ?>
-        </div>
-        <div class="nav-next">
-          <?php previous_post_link('%link', __( 'Next Post  &rarr;', 'yoko')); ?>
-        </div>
-      </nav><!-- end #nav-below -->
+			<?php endwhile; // end of the loop. ?>
 
-    </div><!-- end content -->
+			<nav id="nav-below">
+				<div class="nav-previous"><?php next_post_link('%link', __( '&larr; Previous Post', 'yoko')); ?></div>
+				<div class="nav-next"><?php previous_post_link('%link', __( 'Next Post  &rarr;', 'yoko')); ?></div>
+			</nav><!-- end #nav-below -->
 
-  <?php get_sidebar(); ?>
+	</div><!-- end content -->
+
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
