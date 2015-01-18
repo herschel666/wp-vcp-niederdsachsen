@@ -10,7 +10,7 @@
 </div><!-- end page -->
 <?php wp_footer(); ?>
 
-<?php if ( is_home() ) : ?>
+<?php if ( is_home() || is_page('willkommen') ) : ?>
   <?php
   /**
    * Facebook-Widget der VCP-Nds-Seite
