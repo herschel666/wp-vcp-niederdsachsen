@@ -1,0 +1,39 @@
+
+.grid {
+  @extend .clearfix;
+}
+
+.two-columns-one {
+  width: 48%;
+}
+
+.three-columns-one {
+  width: 30.66%;
+}
+
+.three-columns-two {
+  width: 65.33%;
+}
+
+.four-columns-one {
+  width: 22%;
+}
+
+.four-columns-two {
+  width: 48%;
+}
+
+.four-columns-three {
+  width: 74%;
+}
+
+.two-columns-one,.three-columns-one,.three-columns-two, .four-columns-one, .four-columns-two, .four-columns-three {
+  float: left;
+  margin-right: 4%;
+  position: relative;
+}
+
+.last {
+  clear: right;
+  margin-right: 0 !important;
+}

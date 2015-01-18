@@ -1,0 +1,144 @@
+
+.event-meta {
+  margin-top: rem(10);
+}
+
+.event-meta-bit {
+  margin-bottom: rem(12);
+  font-size: rem(12);
+}
+
+.em-location-map-container {
+  border: 1px solid #333;
+  border-radius: 2px;
+}
+
+.event-info {
+  margin-top: rem(40);
+  font-size: rem(14);
+}
+
+.event-info .em-booking-form-details {
+  width: 100%;
+}
+
+%event_input {
+  width: 60%;
+  padding: rem(10);
+  font-size: rem(14);
+  @include box-sizing (border-box);
+}
+
+%event_label {
+  width: 40%;
+  display: inline-block;
+  line-height: #{(48/14)};
+  white-space: nowrap;
+}
+
+.input-user-field {
+  margin-bottom: rem(20);
+
+  label {
+    @extend %event_label;
+  }
+
+  .input.input {
+    @extend %event_input;
+  }
+
+  &.input-radio input[type="radio"] {
+    margin-left: 0;
+  }
+
+}
+
+.input-group {
+  margin-bottom: rem(20);
+
+  &.input-select select {
+    width: 50%;
+    margin-top: rem(15);
+  }
+
+  label {
+    @extend %event_label;
+  }
+
+  .input.input,
+  input[class*="em-date-"][class*="em-date-"],
+  .em-time-input.em-time-input {
+    @extend %event_input;
+  }
+
+  &.input-textarea .input {
+    resize: vertical;
+  }
+
+  &.input-radio .input-group {
+    margin-bottom: 0;
+    line-height: #{(48/14)};
+    white-space: nowrap;
+
+    input {
+      margin-left: rem(40);
+    }
+
+    input:first-child {
+      margin-left: 0;
+    }
+
+    br {
+      display: none;
+    }
+
+  }
+
+  &.input-field-teilnahmebedingungen {
+    position: relative;
+    margin-bottom: rem(40);
+
+    input {
+      position: absolute;
+      top: rem(3);
+      left: 0;
+      margin: 0;
+    }
+
+    label {
+      width: 100%;
+      float: none;
+      white-space: normal;
+      text-indent: rem(24);
+      line-height: 1.3;
+    }
+
+  }
+
+}
+
+.em-booking-buttons .em-booking-submit {
+  padding: rem(7) rem(12);
+  float: right;
+  font-size: rem(11);
+  line-height: #{(18/11)};
+  font-weight: normal;
+  color: #7C7C7C;
+  border: 1px solid #D2D2D2;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(black, 0.1);
+  cursor: pointer;
+  @include vertical-gradient(#F4F4F4, #E6E6E6);
+  @include transition (all .2s linear);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 1px 2px rgba(black, 0.2);
+    @include vertical-gradient(#E4E4E4, #D6D6D6);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+}
