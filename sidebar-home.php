@@ -1,6 +1,6 @@
 <?php require_once(ABSPATH . WPINC . '/feed.php'); ?>
 
-<div class="secondary secondary-home">
+<div class="secondary">
 
   <aside class="widget widget-home widget-fb">
     <h3 class="widget-title">VCP Niedersachsen auf Facebook</h3>
