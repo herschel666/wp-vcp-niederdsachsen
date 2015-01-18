@@ -37,7 +37,7 @@
           </a><?php if ( !is_null($eventLocation) ) : ?> in <?php echo $eventLocation; ?><?php endif; ?>
           <small class="widget-meta">
             <?php echo date_i18n(get_option('date_format'), strtotime($eventStartDate)); ?>
-            <?php if ( $eventEndDate ) : ?>
+            <?php if ( $eventEndDate && $eventEndDate > $eventStartDate ) : ?>
               &mdash; <?php echo date_i18n(get_option('date_format'), strtotime($eventEndDate)); ?>
             <?php endif; ?>
           </small>
