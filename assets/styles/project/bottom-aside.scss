@@ -1,0 +1,37 @@
+
+/**
+ * Sidebar über dem Footer (Widget-Area 1).
+ */
+
+.bottom-aside {
+  display: table-row;
+  overflow-x: hidden;
+}
+
+.bottom-aside > .widget {
+  padding: rem(20) 4% rem(20) 0;
+  display: table-cell;
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+}
+
+@media screen and (max-width: #{$breakpoint-2}px) {
+
+  .bottom-aside,
+  .bottom-aside > .widget {
+    display: block;
+  }
+
+  .bottom-aside > .widget {
+    padding-right: 0;
+
+    ul li {
+      float: none;
+    }
+
+  }
+
+}

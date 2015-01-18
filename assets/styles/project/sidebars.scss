@@ -77,10 +77,6 @@ aside.widget ul li:last-child {
   width: 90%;
   margin: 0 0 rem(5) 0;
 }
-.tertiary .searchform .search-input {
-  width: 62%;
-  margin: 0 rem(2) rem(5) 0;
-}
 .searchform .search-input {
   width: 40%;
   margin: 0 rem(2) rem(5) 0;
@@ -186,18 +182,15 @@ aside.widget ul li:last-child {
 @media screen and (max-width: #{$breakpoint-1}px) {
   /* --- Sidebars --- */
   .secondary {
-    width: percentage($secondary-width-bp1/$main-width-bp1);
     margin-left: 0;
     padding: rem(30) 0 0;
-    float: left;
     border-top: 1px solid #ddd;
   }
   .secondary aside:last-child {
     margin-bottom: 0;
     border-bottom: none;
   }
-  .secondary aside,
-  .tertiary aside {
+  .secondary aside {
     float: none;
     overflow: hidden;
   }
@@ -227,9 +220,5 @@ aside.widget ul li:last-child {
   .secondary aside:last-child {
     margin-bottom: rem(30);
     border-bottom: 1px solid #ddd;
-  }
-  .tertiary aside:last-child {
-    margin-bottom: 0;
-    border-bottom: none;
   }
 }

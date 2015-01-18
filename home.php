@@ -7,9 +7,9 @@
 get_header(); ?>
 
 <div class="wrap">
-  <div class="main main-home">
+  <div class="main">
 
-    <div class="content content-home">
+    <div class="content">
 
       <?php the_post(); ?>
 
