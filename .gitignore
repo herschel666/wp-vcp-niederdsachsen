@@ -113,3 +113,5 @@ dist/
 
 ### Bower ###
 assets/vendor
+
+.cache

@@ -179,6 +179,33 @@ aside.widget ul li:last-child {
   height: rem(60);
 }
 
+/* --- Cemp Online Widget --- */
+
+.widget-cemp ul li {
+  margin-bottom: rem(14);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.widget-cemp ul li img {
+  width: rem(40);
+  height: rem(40);
+  padding: 1px;
+  margin-right: rem(10);
+  float: left;
+  background-color: white;
+  border: 2px solid transparent;
+  opacity: .8;
+  @include transition (#{border-color .2s linear, opacity .3s linear});
+}
+
+.widget-cemp ul li a:hover img,
+.widget-cemp ul li a:focus img {
+  border-color: $ci-blue;
+  opacity: 1;
+}
+
 @media screen and (max-width: #{$breakpoint-1}px) {
   /* --- Sidebars --- */
   .secondary {

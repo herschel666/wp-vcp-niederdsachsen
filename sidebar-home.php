@@ -79,32 +79,29 @@
     </ul>
   </aside>
 
-  <?php $rss = fetch_feed('http://www.cemp-online.de/feed/'); ?>
-  <?php if ( !is_wp_error($rss) ) : ?>
-    <aside class="widget widget-home widget-cemp">
-      <h3 class="widget-title">Cemp Online</h3>
-      <?php $maxitems = $rss->get_item_quantity(5); ?>
-      <?php $cempNews = $rss->get_items(0, $maxitems); ?>
-      <?php if ( $maxitems == 0 ) : ?>
-        <p>Zurzeit gibt es nichts neues auf Cemp.</p>
-      <?php else : ?>
-        <ul>
-          <?php foreach ( $cempNews as $cempNewsItem ) : ?>
-            <li>
-              <a href="<?php echo esc_url($cempNewsItem->get_permalink()); ?>">
-                <?php echo esc_html($cempNewsItem->get_title()); ?>
-              </a>
-              <small class="widget-meta">
-                Geschrieben am <?php echo $cempNewsItem->get_date(get_option('date_format')); ?>
-              </small>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-      <?php endif; ?>
-      <?php unset($maxitems); ?>
-      <?php unset($cempNews); ?>
-      <?php unset($cempNewsItem); ?>
-    </aside>
-  <?php endif; ?>
+  <?php $rss = vcp_fetch_rss('http://www.cemp-online.de/feed/'); ?>
+  <aside class="widget widget-home widget-cemp">
+    <h3 class="widget-title">Cemp Online</h3>
+    <?php if ( !count($rss) ) : ?>
+      <p>Zurzeit gibt es nichts neues auf Cemp.</p>
+    <?php else : ?>
+      <ul>
+        <?php foreach ( $rss as $cempNewsItem ) : ?>
+          <li class="clearfix">
+            <a href="<?php echo $cempNewsItem->url; ?>">
+              <img src="<?php echo $cempNewsItem->thumb; ?>" alt="">
+            <a href="<?php echo $cempNewsItem->url; ?>">
+            <a href="<?php echo $cempNewsItem->url; ?>">
+              <?php echo $cempNewsItem->title; ?>
+            </a>
+            <small class="widget-meta">
+              Geschrieben am <?php echo $cempNewsItem->created_at; ?>
+            </small>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    <?php endif; ?>
+    <?php unset($rss); ?>
+  </aside>
 
 </div>

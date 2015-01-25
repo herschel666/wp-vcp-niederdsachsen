@@ -9,6 +9,10 @@ remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'wp_shortlink_wp_head');
 
+/**
+ * Zusaetzlicher Kram.
+ */
+require_once(dirname(__FILE__) . '/embed-rss.php');
 
 /**
  * X-Pingback-header entfernen
