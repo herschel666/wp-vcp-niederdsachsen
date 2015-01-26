@@ -19,6 +19,7 @@
  * </ul>
  */
 
+require_once(ABSPATH . WPINC . '/feed.php');
 include_once(dirname(__FILE__) . '/external/php-image-resize/ImageResize.php');
 
 define('VCP_CACHE_FOLDER', TEMPLATEPATH . DIRECTORY_SEPARATOR . '.cache' . DIRECTORY_SEPARATOR);

@@ -2,11 +2,6 @@
 
 <div class="secondary">
 
-  <aside class="widget widget-home widget-fb">
-    <h3 class="widget-title">VCP Niedersachsen auf Facebook</h3>
-    <div class="fb-like-box" data-href="<?php echo get_option('home'); ?>"></div>
-  </aside>
-
   <aside class="widget widget-home widget-events">
     <h3 class="widget-title">Aktuelle Veranstaltungen</h3>
     <ul>
