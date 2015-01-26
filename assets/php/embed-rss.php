@@ -19,31 +19,40 @@
  * </ul>
  */
 
+include_once(dirname(__FILE__) . '/external/php-image-resize/ImageResize.php');
+
 define('VCP_CACHE_FOLDER', TEMPLATEPATH . DIRECTORY_SEPARATOR . '.cache' . DIRECTORY_SEPARATOR);
 
 /**
  * Creation-Date vom Cache-Folder auslesen & diesen loeschen,
  * wenn er aelter als 24 Stunden ist.
  */
-if ( ($then = file_get_contents(VCP_CACHE_FOLDER . '.last') * 1) ) {
+if ( file_exists(VCP_CACHE_FOLDER . '.last') && ($then = (int) file_get_contents(VCP_CACHE_FOLDER . '.last')) ) {
   $now = time();
   $day = 60 * 60 * 24;
   $duration = $now - $then;
   if ( $duration > $day ) {
-    // Vlt doch lieber mit PHP …??!??
-    system('/bin/rm -rf ' . escapeshellarg(VCP_CACHE_FOLDER));
+    $files = array_merge(glob(VCP_CACHE_FOLDER . '*'), glob(VCP_CACHE_FOLDER . '.??*'));
+    foreach ( $files as $file ) {
+      unlink($file);
+    }
+    rmdir(VCP_CACHE_FOLDER);
   }
 }
 
-/** Cache-Folder erstellen und Creation-Date speichern. */
+/** Cache-Folder erstellen. */
 if ( !file_exists(VCP_CACHE_FOLDER) ) {
   mkdir(VCP_CACHE_FOLDER);
+}
+
+/** Creation-Date speichern. */
+if ( !file_exists(VCP_CACHE_FOLDER . '.last') ) {
   $fp = fopen(VCP_CACHE_FOLDER . '.last', 'wb');
   fwrite($fp, time());
   fclose($fp);
 }
 
-class Embedder {
+class VCP_Embedder {
 
   /**
    * Size of the thumbnail
@@ -93,7 +102,7 @@ class Embedder {
       $tmp = new stdClass();
       $tmp->url = esc_url($item->get_permalink());
       $tmp->title = esc_html($item->get_title());
-      $tmp->created_at = $item->get_date(get_option('date_format'));
+      $tmp->created_at = date_i18n(get_option('date_format'), $item->get_date('U'));
       $thumb = $this->__getThumbnail($item->get_content());
       $tmp->thumb = $this->__pathToUrl($thumb);
       $this->posts[] = $tmp;
@@ -125,11 +134,15 @@ class Embedder {
     if ( !$destination ) {
       return false;
     }
-    $type = strtolower(strrchr($destination, '.'));
-    $newName = str_replace($type, '', $destination) . '-1' . $type;
-    $success = @image_resize($destination, self::SIZE . 'x' . self::SIZE . $type, self::SIZE, self::SIZE, 1) == true;
-    $success = rename($newName, $destination);
-    return $success;
+    try {
+      $image = new \Eventviva\ImageResize($destination);
+      $image
+        ->crop(self::SIZE, self::SIZE)
+        ->save($destination);
+    } catch (\Exception $e) {
+      return false;
+    }
+    return true;
   }
 
   protected function __pathToUrl($path) {
@@ -142,6 +155,6 @@ class Embedder {
 
 /** Eigentliche Funktion zur Nutzung im Template. */
 function vcp_fetch_rss($url = null, $maxitems = 5) {
-  $embedder = new Embedder($url, $maxitems);
+  $embedder = new VCP_Embedder($url, $maxitems);
   return $embedder->getPosts();
 }
