@@ -10,11 +10,15 @@
           'numberposts' => 5,
           'post_type' => 'event',
           'post_status' => 'publish',
+          'orderby' => 'meta_value',
+          'metakey' => 'event_start_date_time',
+          'order' => 'ASC',
           'meta_query' => array(
             array(
               'key' => '_event_start_date',
               'value' => date('Y-m-d'),
-              'compare' => '>'
+              'compare' => '>',
+              'type' => 'DATE'
             )
           )
         );
@@ -29,7 +33,8 @@
         <li>
           <a href="<?php echo get_permalink($latestEvent->ID); ?>" class="event-<?php echo $latestEvent->ID; ?>">
             <?php echo $latestEvent->post_title; ?>
-          </a><?php if ( !is_null($eventLocation) ) : ?> in <?php echo $eventLocation; ?><?php endif; ?>
+            <?php if ( !is_null($eventLocation) ) : ?> in <?php echo $eventLocation; ?><?php endif; ?>
+          </a>
           <small class="widget-meta">
             <?php echo date_i18n(get_option('date_format'), strtotime($eventStartDate)); ?>
             <?php if ( $eventEndDate && $eventEndDate > $eventStartDate ) : ?>
@@ -74,7 +79,7 @@
     </ul>
   </aside>
 
-  <?php $rss = vcp_fetch_rss('http://www.cemp-online.de/feed/'); ?>
+  <?php $rss = @vcp_fetch_rss('http://www.cemp-online.de/feed/'); ?>
   <aside class="widget widget-home widget-cemp">
     <h3 class="widget-title">Cemp Online</h3>
     <?php if ( !count($rss) ) : ?>
