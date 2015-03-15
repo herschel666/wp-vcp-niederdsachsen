@@ -88,10 +88,10 @@
       <ul>
         <?php foreach ( $rss as $cempNewsItem ) : ?>
           <li class="clearfix">
-            <a href="<?php echo $cempNewsItem->url; ?>">
+            <a href="<?php echo $cempNewsItem->url; ?>" target="_blank">
               <img src="<?php echo $cempNewsItem->thumb; ?>" alt="">
-            <a href="<?php echo $cempNewsItem->url; ?>">
-            <a href="<?php echo $cempNewsItem->url; ?>">
+            </a>
+            <a href="<?php echo $cempNewsItem->url; ?>" target="_blank">
               <?php echo $cempNewsItem->title; ?>
             </a>
             <small class="widget-meta">
