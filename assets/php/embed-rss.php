@@ -72,7 +72,7 @@ class VCP_Embedder {
   protected $posts = array();
 
   public function __construct($url, $maxitems) {
-    $this->fallback = TEMPLATEPATH . '/assets/images/cemp-logo.png';
+    $this->fallback = get_template_directory_uri() . '/assets/images/cemp-logo.png';
     $this->url = $url;
     $this->maxitems = $maxitems;
     if ( !is_null($this->url) ) {
