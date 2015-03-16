@@ -121,3 +121,18 @@ function getRandomNextGenPics() {
   return  $wpdb->get_results($query);
 
 }
+
+/**
+ * Haengt `rel="lightbox[post-<ID>]"` an Image-Anchors
+ * in Posts.
+ *
+ * @return String
+ */
+function addRelLightbox($content) {
+       global $post;
+       $pattern = '/<a(.*?)href=(\'|")(.*?).(gif|jpeg|jpg|png)(\'|")(.*?)>/i';
+       $replacement = '<a$1href=$2$3.$4$5 rel="lightbox[post-' . $post->ID . ']"' .
+        ' title="'. $post->post_title .'"$6>';
+       return preg_replace($pattern, $replacement, $content);
+}
+add_filter('the_content', 'addRelLightbox');

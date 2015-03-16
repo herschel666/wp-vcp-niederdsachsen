@@ -10,13 +10,16 @@
 </div><!-- end page -->
 <?php wp_footer(); ?>
 
+<?php
+$mainJs = $_SERVER['HTTP_HOST'] == 'www.vcp-niedersachsen.xy' ? 'main.js' : 'main.min.js';
+?>
 <script>
   (function (v, c, p) {
     var l = v.getElementsByTagName(c)[0],
         e = v.createElement(c);
     e.type = 'text/javascript'; e.src = p; e.async = true;
     l.parentNode.insertBefore(e, l);
-  })(document, 'script', '<?php bloginfo("template_url"); ?>/assets/scripts/main.js');
+  })(document, 'script', '<?php bloginfo("template_url"); ?>/assets/scripts/<?php echo $mainJs; ?>?1');
 </script>
 
 </body>

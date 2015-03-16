@@ -2096,8 +2096,7 @@ jQuery(function ($, undefined) {
  * Photo-widget
  */
 (function ($) {
-  $('#photo-widget').magnificPopup({
-    delegate: 'a',
+  $('a[rel^="lightbox"], .gallery-item a').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
     mainClass: 'image-popup',
